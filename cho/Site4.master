@@ -1,0 +1,94 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site4.master.cs" Inherits="SiteMaster" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head runat="server">
+    <title></title>
+    <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1
+        {
+            width: 83px;
+        }
+        .style2
+        {
+            width: 297px;
+            text-align: right;
+        }
+        .style3
+        {
+            width: 35px;
+            text-align: right;
+        }
+        .style6
+        {
+            width: 45px;
+        }
+        .style7
+        {
+            width: 43px;
+        }
+        .style8
+        {
+            width: 42px;
+        }
+        .style9
+        {
+            width: 36px;
+        }
+    </style>
+</head>
+<body>
+    <form runat="server">
+    <div class="page">
+        <div class="header">
+            <div class="title">
+                <h1>
+                    Vaccination Management Sysyem
+                </h1>
+            </div>
+            <div class="loginDisplay">
+                <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false" 
+                    >
+                    <AnonymousTemplate>
+                        [ <a href="~/Default.aspx" ID="HeadLoginStatus" runat="server">Log out</a> ]
+                    </AnonymousTemplate>
+                    
+                </asp:LoginView>
+            </div>
+            <div class="clear hideSkiplink">
+                <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" 
+                    EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal" 
+                    onmenuitemclick="NavigationMenu_MenuItemClick">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/cho/Default.aspx" Text="Home"/>
+                        <asp:MenuItem Text="Profile" Value="Profile" NavigateUrl="~/cho/profile.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Create Campaign" Value="Create Campaign" 
+                            NavigateUrl="~/cho/createCampaign.aspx"/>
+                        <asp:MenuItem NavigateUrl="~/cho/selectCamp.aspx" Text="Set Centers" 
+                            Value="Set Centers"></asp:MenuItem>
+                        <asp:MenuItem Text="Assign Health Officers" Value="Assign Health Officers" 
+                            NavigateUrl="~/cho/selectCamp2.aspx">
+                        </asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+            </div>
+        </div>
+        <div class="main">
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                <p>
+                    <br />
+                </p>
+            </asp:ContentPlaceHolder>
+        </div>
+        <div class="clear">
+        </div>
+    </div>
+    <div class="footer">
+        
+    </div>
+    </form>
+</body>
+</html>
